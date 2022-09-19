@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<label for="string">Nhap vao: </label>
+<input type="text" name id="string">
+<button onclick="transcript()">Dich</button>
+<p id="result"></p>
+<body>
+<script>
+    function transcript() {
+        let arr_eng = ["Banana", "Apple", "Orange"];
+        let arr_vie = ["Chuoi", "Tao", "Cam"];
+        let string = document.getElementById("string").value;
+        let index_eng = 0;
+        let result='';
+        for (let i = 0; i < arr_eng.length; i++) {
+            if (string == arr_eng[i]) {
+                index_eng = i;
+                for (let j = 0; j < arr_vie.length; j++) {
+                    if (index_eng == j) {
+                        result = arr_vie[j];
+                    }
+                }
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>
